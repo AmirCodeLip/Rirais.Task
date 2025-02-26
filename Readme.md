@@ -1,17 +1,16 @@
-# rirais task
+# rirais task 🛠
 
 this is simple project for rirais company for information about their website you can checkout 
-https://chatgpt.com.
+https://rirais.com.
 
+# warning 🔥 
+all the erors are handled with logs and rpc exeptions.
 
-src/
-├── Rirais.Task.GrpcClient  # client project.
-├── utils/       # Utility/helper functions
-├── services/    # API calls or backend interaction
-├── assets/      # Images, fonts, stylesheets
-├── main.js      # Entry point for the application
 
 Src/
-├── Rirais.Task.GrpcClient  # client project.
-├── favicon.ico # Website icon
-├── images/     # Static images
+
+├── GrpcClient  # client project.
+
+├── GrpcSdk       # sdk for transfer data between server and client.
+
+├── GrpcServer    # web server.
