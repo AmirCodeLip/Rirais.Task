@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+option csharp_namespace = "Rirais.Task.Grpc";
+
+package person;
+
+// The person service definition.
+service Person {
+  // create and add new person.
+  rpc Create (CreateRequest) returns (CreateResponse);
+  // update person.
+  rpc Update (UpdateRequest) returns (UpdateResponse);
+  // get list of persons
+  rpc Read (Empty) returns (PeopleList);
+  // delete request
+  rpc Delete (DeleteRequest) returns (Empty);
+}
+
+// The request for createing new person.
+message CreateRequest {
+  string name = 1;
+  string lastName = 2;
+  string nationalCode = 3;
+  string birthDate = 4;
+}
+
+// The request for updating new person.
+message UpdateRequest {
+  string id = 1;
+  string name = 2;
+  string lastName = 3;
+  string nationalCode = 4;
+  string birthDate = 5;
+}
+
+message DeleteRequest{
+  string id = 1;
+}
+
+message PersonModel{
+  string id = 1;
+  string name = 2;
+  string lastName = 3;
+  string nationalCode = 4;
+  string birthDate = 5;
+}
+
+// The response for createing new person.
+message CreateResponse {
+  string id = 1;
+  string name = 2;
+}
+
+// The response for createing new person.
+message UpdateResponse {
+  string id = 1;
+  string name = 2;
+}
+
+// Define a PeopleList message that contains a list of persons
+message PeopleList {
+  repeated PersonModel people = 1;
+}
+
+message Empty {
+
+}
